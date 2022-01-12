@@ -22,6 +22,7 @@ class User {
         return $row;
     }
     
+    //Register new users
     public function register($data) {
         $query = "INSERT INTO users (uniqueId, username, password, email, image, status) VALUES(:uniqueId, :username, :password, :email, :image, :status)";
 
@@ -41,5 +42,16 @@ class User {
             return false;
         }
         
+    }
+    
+    //Get Friend's List
+    public function getFriendList($uniqueId) {
+        $query = "SELECT * FROM users WHERE uniqueId != :uniqueId";
+
+        $this->db->query($query);
+        $this->db->bind(':uniqueId', $uniqueId);
+
+        $results = $this->db->resultSet();
+        return $results;
     }
 }

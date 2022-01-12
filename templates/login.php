@@ -1,11 +1,11 @@
 <?php
-echo $user->id;
+// echo $test;
 echo SITE_TITLE;
 
-// foreach ($user as $job):
+foreach ($test as $job):
         
-//     echo $job->id;  
-//     echo $job->email; 
-// endforeach; 
+    echo $job->id;  
+    echo $job->email; 
+endforeach; 
 
 ?>

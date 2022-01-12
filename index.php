@@ -6,7 +6,7 @@ $user = new User;
 
 $template = new Template('templates/login.php');
 
-$template->test = $user->test();
+$template->test = $user->getFriendList(3456);
 // if ($user->login()) {
 //     $template->b = $user->login();
 // } else {
