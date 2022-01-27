@@ -3,6 +3,7 @@
 <?php
 
 $user = new User;
+$template = new Template('templates/signup.php');
 
 if (isset($_POST['submit'])) {
     //Data Array
@@ -17,12 +18,15 @@ if (isset($_POST['submit'])) {
     $data['status'] = 'offline';
 
     if ($user->register($data)) {
-        echo "registered successfully";
+        $_SESSION['uniqueId'] = $data['uniqueId'];
+        redirect('index.php', "Registration successful", "success");
+
+        // echo "registered successfully";
     } else {
         echo "error";
     }
 }
 
-$template = new Template('templates/signup.php');
+
 
 echo $template;

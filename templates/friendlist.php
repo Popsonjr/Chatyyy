@@ -1,1 +1,3 @@
 FRIENDLIST
+<?php
+$message;

@@ -4,7 +4,15 @@
 
 $user = new User;
 
-$template = new Template('templates/login.php');
+if (!empty($_SESSION['uniqueId'])) {
+    $template = new Template('templates/friendlist.php');
+    $template->message = displayMessage();
+} else {
+    $template = new Template('templates/login.php');
+}
+
+
+
 
 $template->test = $user->getFriendList(3456);
 // if ($user->login()) {
