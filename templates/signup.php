@@ -38,6 +38,7 @@
                         <button type="submit" class="btn btn-outline-success mt-3" name="submit">Sign Up</button>
                     </fieldset>
                 </form>
+                <p>Already have an account ? <a href="index.php">Login here</a></p>
             </div>
         </div>
     </div>

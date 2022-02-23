@@ -58,9 +58,9 @@ class Database {
         $this->statement->bindvalue($param, $value, $type);
     }
 
-    public function test() {
-        return 'test successful';
-    }
+    // public function test() {
+    //     return 'test successful';
+    // }
 
     public function execute() {
         return $this->statement->execute();

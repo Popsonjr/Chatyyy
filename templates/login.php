@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="bs-component">
-                <form>
+                <form action="login.php" method="POST">
                     <fieldset>
                         <legend>Fill in your details</legend>
                   
@@ -28,6 +28,7 @@
                         <button type="submit" class="btn btn-outline-success mt-3" name="submit">Login</button>
                     </fieldset>
                 </form>
+                <p>Don't have an account ? <a href="register.php">Sign Up here</a></p>
             </div>
         </div>
     </div>

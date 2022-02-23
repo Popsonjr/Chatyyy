@@ -6,6 +6,30 @@ class User {
         $this->db = new Database;
     }
 
+    //Get User Details
+    public function getUser($uniqueId){
+        $query = "SELECT * FROM users WHERE uniqueId = :uniqueId";
+        $this->db->query($query);
+
+        $this->db->bind(':uniqueId', $uniqueId);
+        $row = $this->db->singleResult();
+        return $row;
+    }
+
+    //Logout
+    public function logout($logoutId) {
+        $query = "UPDATE users SET status = 'Offline' WHERE uniqueId = :logoutId";
+        $this->db->query($query);
+
+        $this->db->bind(':logoutId', $logoutId);
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     //login
     public function login($email, $password) {
 
@@ -18,8 +42,18 @@ class User {
         
         //Assign row
         $row = $this->db->singleResult();
+        if ($row) {
+            $query = "UPDATE users SET status = 'Online' WHERE uniqueId = :uniqueId";
+            $this->db->query($query);
+            $this->db->bind(':uniqueId', $row->uniqueId);
+            if($this->db->execute()){
+                return $row;
+            } 
+        } else {
+            return false;
+        }
 
-        return $row;
+        
     }
     
     //Register new users
