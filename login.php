@@ -1,4 +1,4 @@
-<?php include 'config/init.php'; ?>
+<?php include_once 'config/init.php'; ?>
 
 <?php
 $user = new User;
@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['uniqueId'] = $result->uniqueId;
         redirect('index.php', 'Login Successful', 'success');
     } else {
-        echo "error";
+        redirect('index.php', 'Email or Password is incorrect', 'error');
     }
 }
 

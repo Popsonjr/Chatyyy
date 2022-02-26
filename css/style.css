@@ -2,5 +2,13 @@
 
 *, body {
     font-family: 'Poppins';
-    background-color: black;
+    /* background-color: black; */
+}
+
+#text {
+    outline: none;
+    background-color: inherit;
+    box-shadow: none;
+    font-weight: 600;
+    /* font-size: 18px; */
 }

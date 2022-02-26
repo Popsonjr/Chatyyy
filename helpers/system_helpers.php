@@ -30,15 +30,16 @@ function displayMessage(){
             $messageType = $_SESSION['messageType'];
 
             if ($messageType == 'error') {
-                echo "<div class='alert alert-danger w-50 mx-5 my-2'>". $message . "</div>"; 
+                echo "<div class='alert alert-danger w-50 mx-auto my-2'>". $message . "</div>"; 
             } else {
-                echo "<div class='alert alert-success w-50 mx-5 my-2'>". $message . "</div>";
+                echo "<div class='alert alert-success w-50 mx-auto my-2'>". $message . "</div>";
             }
 
         }
         
         unset($_SESSION['message']);
         unset($_SESSION['messageType']);
+        unset($_SESSION['errorPage']);
             
     } else {
         echo '';
