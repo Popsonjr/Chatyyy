@@ -4,7 +4,7 @@
         <?php $message; ?>
         <div class="col-lg-12">
             <div class="page-header">
-              <h1 class="text-success">Login Page</h1>
+                <h1 class="text-success">Login Page</h1>
             </div>
         </div>
     </div>
@@ -15,17 +15,17 @@
                 <form action="login.php" method="POST">
                     <fieldset>
                         <legend>Fill in your details</legend>
-                  
+
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
                             <input type="email" class="form-control" name="email" aria-describedby="email" placeholder="Enter email" required>
-                    
+
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-label mt-4">Password</label>
                             <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
-                                    
+
                         <button type="submit" class="btn btn-outline-success mt-3" name="submit">Login</button>
                     </fieldset>
                 </form>
