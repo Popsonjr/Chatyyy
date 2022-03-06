@@ -4,7 +4,7 @@
         <?php $message; ?>
         <div class="col-lg-12">
             <div class="page-header">
-              <h1 class="text-success">Sign Up Page</h1>
+                <h1 class="text-success">Sign Up Page</h1>
             </div>
         </div>
     </div>
@@ -15,10 +15,10 @@
                 <form action="register.php" method="POST" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Fill in your details</legend>
-                        
+
                         <div class="form-group has-danger">
                             <label class="form-label mt-4" for="username">Username</label>
-                            <input type="text" class="form-control is-invalid" name="username" required>
+                            <input type="text" class="form-control" name="username" required>
                             <!-- <div class="invalid-feedback">Sorry, that username's taken. Try another?</div> -->
                         </div>
 
@@ -35,7 +35,7 @@
                             <label for="profile image" class="form-label mt-4">Profile Image</label>
                             <input class="form-control" type="file" name="image" required>
                         </div>
-                                    
+
                         <button type="submit" class="btn btn-outline-success mt-3" name="submit">Sign Up</button>
                     </fieldset>
                 </form>

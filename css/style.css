@@ -1,8 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-*, body {
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+* {
     font-family: 'Poppins';
-    /* background-color: black; */
+}
+
+#send {
+    max-width: calc(100% - 120px);
+    border-radius: 20px 20px 0 20px;
+}
+
+#receive {
+    max-width: calc(100% - 120px);
+    border-radius: 20px 20px 20px 0;
+    background-color: #fff;
+}
+
+.message-body {
+    height: 400px;
+    overflow-y: auto;
+}
+
+a#user {
+    text-decoration: none;
 }
 
 #text {
@@ -10,5 +34,4 @@
     background-color: inherit;
     box-shadow: none;
     font-weight: 600;
-    /* font-size: 18px; */
 }
