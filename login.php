@@ -15,6 +15,4 @@ if (isset($_POST['submit'])) {
         redirect('index.php', 'Email or Password is incorrect', 'error');
     }
 }
-
-
 echo $template;

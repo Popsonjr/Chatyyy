@@ -17,18 +17,18 @@ if (isset($_POST['submit'])) {
 
     //Validate Email
     if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        if(!$user->emailCheck($data['email'])){
+        if (!$user->emailCheck($data['email'])) {
             if (isset($_FILES['image'])) {
                 $imageName = $_FILES['image']['name'];
                 $imageType = $_FILES['image']['type'];
                 $tmpName = $_FILES['image']['tmp_name']; //temporary name to move/save file in our folder
                 $imageExtension = explode('.', $imageName)[1];
                 $extensions = ['png', 'jpeg', 'jpg'];
-                
+
                 if (in_array($imageExtension, $extensions) === true) {
-                    $newImageName = $time.$imageName;
-                    $data['image'] = "php/images/".$newImageName;
-                    if (move_uploaded_file($tmpName, "php/images/".$newImageName)) {
+                    $newImageName = $time . $imageName;
+                    $data['image'] = "php/images/" . $newImageName;
+                    if (move_uploaded_file($tmpName, "php/images/" . $newImageName)) {
                         if ($user->register($data)) {
                             $_SESSION['uniqueId'] = $data['uniqueId'];
                             redirect('index.php', "Registration successful", "success");
@@ -38,14 +38,12 @@ if (isset($_POST['submit'])) {
                         }
                     } else {
                         $_SESSION['errorPage'] = 'register.php';
-                        redirect('index.php', 'Something went wrong!', 'error');
+                        redirect('index.php', 'Image size too large!', 'error');
                     }
-                    
                 } else {
                     $_SESSION['errorPage'] = 'register.php';
                     redirect('index.php', 'Select a valid file type - jpeg, png, jpg', 'error');
                 }
-                    
             } else {
                 $_SESSION['errorPage'] = 'register.php';
                 redirect('index.php', 'Select a profile picture', 'error');
@@ -58,8 +56,6 @@ if (isset($_POST['submit'])) {
         $_SESSION['errorPage'] = 'register.php';
         redirect('index.php', 'Email is not valid', 'error');
     }
-
-    
 }
 
 

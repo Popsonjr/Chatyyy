@@ -15,7 +15,7 @@ searchButton.onclick = () => {
     }
 }
 
-let searchTerm = ''
+// let searchTerm = ''
 searchBar.onkeyup = () => {
     searchTerm = searchBar.value
 
@@ -25,10 +25,7 @@ searchBar.onkeyup = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response
-                if (searchTerm !== '') {
-                    users.innerHTML = data
-                } 
-                
+                users.innerHTML = data   
             }
         }
     }
@@ -38,14 +35,14 @@ searchBar.onkeyup = () => {
 
 setInterval(() => {
     let xhr = new XMLHttpRequest()
-    xhr.open('POST', 'users.php', true)
+    xhr.open('GET', 'users.php', true)
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response
-                if (!searchBar.classList.contains('d-none') && searchTerm == '') {
-                    console.log('ddcdc');
+                if (!searchButton.classList.contains('active')) {
                     users.innerHTML = data
+                    console.log('refresh')
                 }
             }
         }
